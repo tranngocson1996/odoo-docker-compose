@@ -46,7 +46,7 @@ if [[ -z "$DESTINATION" ]] || [[ -z "$PORT" ]] || [[ -z "$CHAT" ]]; then
 fi
 
 # Clone Odoo directory
-git clone --depth=1 https://github.com/minhng92/odoo-19-docker-compose $DESTINATION
+git clone --depth=1 -b 19.0 https://github.com/tranngocson1996/odoo-docker-compose $DESTINATION
 rm -rf $DESTINATION/.git
 
 # Determine master password (use provided value or config default)

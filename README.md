@@ -2,15 +2,15 @@
 
 ## Quick Installation
 
-Install [docker](https://docs.docker.com/get-docker/) and [docker-compose](https://docs.docker.com/compose/install/) yourself, then run the following to set up first Odoo instance @ `localhost:10019` (default master password: `minhng.info`):
+Install [docker](https://docs.docker.com/get-docker/) and [docker-compose](https://docs.docker.com/compose/install/) yourself, then run the following to set up first Odoo instance @ `localhost:10019` (default master password: `odoo`):
 
 ``` bash
-curl -s https://raw.githubusercontent.com/minhng92/odoo-19-docker-compose/master/run.sh | bash -s -- --destination odoo-one --port 10019 --chat 20019
+curl -s https://raw.githubusercontent.com/tranngocson1996/odoo-docker-compose/19.0/run.sh | bash -s -- --destination odoo-one --port 10019 --chat 20019
 ```
-and/or run the following to set up another Odoo instance @ `localhost:11019` (default master password: `minhng.info`):
+and/or run the following to set up another Odoo instance @ `localhost:11019` (default master password: `odoo`):
 
 ``` bash
-curl -s https://raw.githubusercontent.com/minhng92/odoo-19-docker-compose/master/run.sh | bash -s -- --destination odoo-two --port 11019 --chat 21019
+curl -s https://raw.githubusercontent.com/tranngocson1996/odoo-docker-compose/19.0/run.sh | bash -s -- --destination odoo-two --port 11019 --chat 21019
 ```
 
 Arguments:
@@ -18,18 +18,18 @@ Arguments:
 * `--port`: Odoo port (e.g., **10019**)
 * `--chat`: Live chat port (e.g., **20019**)
 * `--password`: Master password (**admin_passwd**). Optional, defaults to the value in **etc/odoo.conf**.
-* `--db-password`: PostgreSQL password (env **POSTGRES_PASSWORD**/**PASSWORD**). Optional, defaults to `odoo19@2025`.
+* `--db-password`: PostgreSQL password (env **POSTGRES_PASSWORD**/**PASSWORD**). Optional, defaults to `odoo`.
 
 Example with a custom master password:
 
 ``` bash
-curl -s https://raw.githubusercontent.com/minhng92/odoo-19-docker-compose/master/run.sh | bash -s -- --destination odoo-one --port 10019 --chat 20019 --password test1234
+curl -s https://raw.githubusercontent.com/tranngocson1996/odoo-docker-compose/19.0/run.sh | bash -s -- --destination odoo-one --port 10019 --chat 20019 --password test1234
 ```
 
 Example with custom master + database passwords:
 
 ``` bash
-curl -s https://raw.githubusercontent.com/minhng92/odoo-19-docker-compose/master/run.sh | bash -s -- --destination odoo-one --port 10019 --chat 20019 --password test1234 --db-password dbSecret123
+curl -s https://raw.githubusercontent.com/tranngocson1996/odoo-docker-compose/19.0/run.sh | bash -s -- --destination odoo-one --port 10019 --chat 20019 --password test1234 --db-password dbSecret123
 ```
 
 If `curl` is not found, install it:
@@ -97,7 +97,7 @@ The **addons/** folder contains custom addons. Just put your custom addons if yo
 
 * To change Odoo configuration, edit file: **etc/odoo.conf**.
 * Log file: **etc/odoo-server.log**
-* Default database password (**admin_passwd**) is `minhng.info`, update it via `--password` or in [etc/odoo.conf#L75](/etc/odoo.conf#L75)
+* Default database password (**admin_passwd**) is `odoo`, update it via `--password` or in [etc/odoo.conf#L75](/etc/odoo.conf#L75)
 
 ## Odoo container management
 
@@ -163,9 +163,3 @@ server {
 <p>
 <img src="screenshots/odoo-19-product-form.jpg" width="100%">
 </p>
-
-## ☕ Buy Me a Coffee
-
-If you find this project helpful, consider buying me a coffee to support my work!
-
-<a href="https://buymeacoffee.com/minhng.info" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
