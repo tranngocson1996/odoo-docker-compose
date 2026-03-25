@@ -1,3 +1,4 @@
+.env
 postgresql/
 etc/odoo-server.log*
 etc/addons/

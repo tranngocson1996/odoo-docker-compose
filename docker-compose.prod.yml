@@ -1,0 +1,11 @@
+# Production overlay (EC2 + Nginx on the host).
+# Use: docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+#
+# Binds Odoo ports to 127.0.0.1 only so they are not reachable from the internet;
+# only Nginx on the server connects to localhost:10019 and localhost:20019.
+
+services:
+  odoo19:
+    ports:
+      - "127.0.0.1:10019:8069"
+      - "127.0.0.1:20019:8072"
